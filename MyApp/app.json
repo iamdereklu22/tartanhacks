@@ -27,9 +27,7 @@
     },
     "ios": {
       "config": {
-        "googleMaps": {
-          "apiKey": "AIzaSyA_JPhTUu676U3vrp8ehr9nU9pgy-QS7PQ"
-        }
+        "googleMapsApiKey": "AIzaSyA_JPhTUu676U3vrp8ehr9nU9pgy-QS7PQ"
       }
     }
   }

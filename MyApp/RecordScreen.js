@@ -1,6 +1,13 @@
 import { CameraView, useCameraPermissions } from "expo-camera";
 import { useRef, useState } from "react";
-import { Button, Pressable, StyleSheet, Text, View } from "react-native";
+import {
+  Button,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+  Animated,
+} from "react-native";
 import { Image } from "expo-image";
 import { useNavigation } from "@react-navigation/native";
 import { AntDesign, Feather, FontAwesome6 } from "@expo/vector-icons";
@@ -8,6 +15,9 @@ import { AntDesign, Feather, FontAwesome6 } from "@expo/vector-icons";
 export default function App() {
   const [permission, requestPermission] = useCameraPermissions();
   const ref = useRef(null);
+  const navigation = useNavigation();
+
+  const slideAnim = new Animated.Value(0);
   const [uri, setUri] = useState(null);
   const [mode, setMode] = useState("picture");
   const [facing, setFacing] = useState("back");
@@ -105,9 +115,7 @@ export default function App() {
   };
 
   return (
-    <View style={styles.container}>
-      {uri ? renderPicture() : renderCamera()}
-    </View>
+    <View style={styles.container}>{uri ? handleRate() : renderCamera()}</View>
   );
 }
 
