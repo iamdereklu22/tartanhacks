@@ -2,6 +2,35 @@
   "expo": {
     "name": "MyApp",
     "slug": "MyApp",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera",
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone"
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow HotSyndrome to use your location."
+        }
+      ]
+    ],
+    "android": {
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyA_JPhTUu676U3vrp8ehr9nU9pgy-QS7PQ"
+        }
+      }
+    },
+    "ios": {
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyA_JPhTUu676U3vrp8ehr9nU9pgy-QS7PQ"
+        }
+      }
+    }
   }
 }
